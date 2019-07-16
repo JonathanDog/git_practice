@@ -62,3 +62,15 @@ def find_attractions(destination, interests):
 la_art = find_attractions("Los Angeles, USA",['art'])
 
 print(la_art)
+
+def get_attractions_for_traveler(traveler):
+	traveler_destination = traveler[1]
+	traveler_interests = traveler[2]   
+	traveler_attractions = find_attractions(traveler_destination, traveler_interests)
+	interests_string = "Hi " + traveler[0] + ", we think you'll like these places around " + traveler[1] +": "
+	for i in range(len(traveler_attractions)):
+		interests_string += traveler_attractions[i]
+	interests_string += "."
+	return interests_string 
+
+print (get_attractions_for_traveler(['Joe Savino', "Shanghai, China", ['garden']]))
